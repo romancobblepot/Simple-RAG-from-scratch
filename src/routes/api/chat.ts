@@ -18,12 +18,12 @@ function toFlatEmbedding(raw: unknown): number[] {
   let arr = raw as unknown[];
   while (Array.isArray(arr) && Array.isArray(arr[0])) {
     const matrix = arr as number[][];
-    const width = matrix[0].length;
+    const width = matrix[0]?.length ?? 0;
     const pooled = new Array<number>(width).fill(0);
     for (const row of matrix) {
-      for (let i = 0; i < width; i++) pooled[i] += row[i];
+      for (let i = 0; i < width; i++) pooled[i] = (pooled[i] ?? 0) + (row[i] ?? 0);
     }
-    arr = pooled.map((v) => v / matrix.length);
+    arr = pooled.map((v) => v / (matrix.length || 1));
   }
   return arr as number[];
 }
