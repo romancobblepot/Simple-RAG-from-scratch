@@ -77,16 +77,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "RAG Nutritional Chatbot: Build from Scratch" },
+      {
+        name: "description",
+        content:
+          "A retrieval-augmented chatbot over the 2020 Human Nutrition textbook, built from scratch by Adnan Iqbal Kantroo.",
+      },
+      { name: "author", content: "Adnan Iqbal Kantroo" },
+      { property: "og:title", content: "RAG Nutritional Chatbot: Build from Scratch" },
+      {
+        property: "og:description",
+        content:
+          "Ask the Human Nutrition book anything — answers grounded in the 2020 edition with clickable page citations.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
